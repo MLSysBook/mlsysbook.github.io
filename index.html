@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Systems: Educational Resources | Open Access Hub</title>
+    <meta name="description" content="Comprehensive educational resources for machine learning systems. Open-access textbooks, labs, and tools for students and educators worldwide.">
+    <meta name="keywords" content="machine learning systems, education, open access, textbook, labs, resources, computer science">
+    <meta name="author" content="MLSysBook Community">
+    
+    <!-- Simple favicon without background -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80' x='10'%3E📚%3C/text%3E%3C/svg%3E">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Machine Learning Systems Educational Resources">
+    <meta property="og:description" content="Open-access educational materials for learning and teaching ML systems">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mlsysbook.github.io">
+    
+    <style>
+        :root {
+            /* Academic Color Palette */
+            --academic-navy: #1e3a8a;
+            --academic-blue: #3b82f6;
+            --academic-indigo: #4f46e5;
+            --academic-gray: #64748b;
+            --academic-slate: #475569;
+            
+            /* Neutral Grays */
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            /* Semantic Colors */
+            --text-primary: var(--gray-900);
+            --text-secondary: var(--gray-600);
+            --text-muted: var(--gray-500);
+            --text-light: var(--gray-400);
+            
+            --border-light: var(--gray-200);
+            --border-medium: var(--gray-300);
+            
+            --surface-white: #ffffff;
+            --surface-light: var(--gray-50);
+            --surface-card: #ffffff;
+            
+            /* Academic Accents */
+            --accent-primary: var(--academic-blue);
+            --accent-secondary: var(--academic-indigo);
+            --accent-muted: var(--academic-gray);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Avenir Next', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--surface-light);
+            font-size: 16px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--surface-white);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-cta {
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--academic-navy);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--surface-white);
+            padding: 4rem 0 5rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 520px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface-light);
+            border: 1px solid var(--border-medium);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero-attribution {
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .attribution-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--border-medium);
+        }
+
+        .author-info h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .attribution-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .resource-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .resource-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .resource-card:hover .resource-icon {
+            background: var(--gray-50);
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+        }
+
+        .resource-meta {
+            flex: 1;
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .resource-type {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .resource-link {
+            color: var(--accent-primary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-status {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--surface-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+        }
+
+        /* Support Section */
+        .support-section {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+
+        .support-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+            padding: 2rem;
+            background: var(--surface-light);
+            border-radius: 12px;
+        }
+
+        .support-stat {
+            text-align: center;
+        }
+
+        .support-stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-stat-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .contribution-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .tier-card {
+            background: var(--surface-white);
+            border: 2px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+        }
+
+        .tier-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .tier-featured {
+            border-color: var(--accent-primary);
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+        }
+
+        .tier-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .tier-amount {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .tier-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            min-height: 60px;
+        }
+
+        .tier-type {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: var(--surface-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .support-impact {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--surface-light);
+            border-radius: 12px;
+        }
+
+        .support-impact h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .impact-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .support-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        .support-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Community Section */
+        .community {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .community-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .community-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .community-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .community-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--surface-card);
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-note {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--academic-navy);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: var(--surface-light);
+            color: var(--text-primary);
+            border: 1px solid var(--border-medium);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-card);
+            border-color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0 1rem;
+                height: 60px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .main {
+                padding: 0 1rem;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-section {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+
+            .support-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .contribution-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .community {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+
+            .community-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>ML Systems Textbook Resources</span>
+            </a>
+            <div class="nav-links">
+                <a href="#resources" class="nav-link">Materials</a>
+                <a href="#support" class="nav-link">Support</a>
+                <a href="#community" class="nav-link">Community</a>
+                <a href="https://github.com/harvard-edge/cs249r_book/discussions" class="nav-link">Discussions</a>
+                <a href="https://mlsysbook.ai" class="nav-cta">Access Book</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <div class="status-dot"></div>
+                    <span>Open Access Educational Resources</span>
+                </div>
+                
+                <h1>Machine Learning Systems Education</h1>
+                
+                <p class="hero-subtitle">
+                    MLSysBook.org is more than a textbook — it's a global, hands-on movement to make machine learning systems education accessible, practical, and community-powered.
+                </p>
+                
+                <div class="hero-attribution">
+                    <div class="attribution-header">
+                        <img src="https://github.com/profvjreddi.png" alt="Vijay Janapa Reddi" class="author-avatar">
+                        <div class="author-info">
+                            <h3>Vijay Janapa Reddi</h3>
+                            <p>Harvard University</p>
+                        </div>
+                    </div>
+                    <p class="attribution-note">
+                        Created and maintained by the ML systems education community
+                    </p>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="https://mlsysbook.ai" class="btn btn-primary">
+                        📖 Explore Textbook
+                    </a>
+                    <a href="https://github.com/mlsysbook/labs" class="btn btn-secondary">
+                        🔬 Browse Labs
+                    </a>
+                    <a href="https://opencollective.com/mlsysbook" class="btn btn-secondary">
+                        💝 Support Us
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Chapters Available</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Lab Exercises</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100,000+</span>
+                        <span class="stat-label">Students & Educators</span>
+                    </div>
+                    <div class="stat-card">
+                      <span class="stat-number">Open</span>
+                      <span class="stat-label">Source & Free</span>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Resources Section -->
+        <section class="section" id="resources">
+            <div class="section-header">
+                <h2 class="section-title">Educational Resources</h2>
+                <p class="section-subtitle">
+                    A curated collection of materials for comprehensive machine learning systems education
+                </p>
+            </div>
+
+            <div class="resource-grid">
+                <a href="https://mlsysbook.ai" class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">📖</div>
+                        <div class="resource-meta">
+                            <h3 class="resource-title">Open Access Textbook</h3>
+                            <span class="resource-type">Interactive Book</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        An introductory textbook covering the full machine learning systems lifecycle, from data processing to model deployment and monitoring.
+                    </p>
+                    <div class="resource-footer">
+                        <span class="resource-link">Read Online →</span>
+                        <span class="resource-status">✅ Available</span>
+                    </div>
+                </a>
+
+                <a href="https://tinytorch.ai" class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🔥</div>
+                        <div class="resource-meta">
+                            <h3 class="resource-title">TinyTorch Framework</h3>
+                            <span class="resource-type">Educational Codebase</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Build machine learning infrastructure from first principles: automatic differentiation, training loops, and distributed systems.
+                    </p>
+                    <div class="resource-footer">
+                        <span class="resource-link">Browse Code →</span>
+                        <span class="resource-status">🚧 Under Construction</span>
+                    </div>
+                </a>
+
+                <a href="https://mlsysbook.ai/contents/labs/overview.html" class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🛠️</div>
+                        <div class="resource-meta">
+                            <h3 class="resource-title">TinyML Hardware Kits</h3>
+                            <span class="resource-type">Physical Hardware</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Educational hardware kits for hands-on experience with embedded machine learning and edge computing deployment.
+                    </p>
+                    <div class="resource-footer">
+                        <span class="resource-link">View Kits →</span>
+                        <span class="resource-status">✅ Available</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/tinyMLx/courseware/tree/master/edX" class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🎓</div>
+                        <div class="resource-meta">
+                            <h3 class="resource-title">Instructor Materials</h3>
+                            <span class="resource-type">Teaching Resources</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Lecture slides, assignment templates, and assessment materials for educators teaching machine learning systems courses.
+                    </p>
+                    <div class="resource-footer">
+                        <span class="resource-link">Access Materials →</span>
+                        <span class="resource-status">✅ Available</span>
+                    </div>
+                </a>
+
+                <a href="https://tinyml.seas.harvard.edu" class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">🌟</div>
+                        <div class="resource-meta">
+                            <h3 class="resource-title">TinyML Edu</h3>
+                            <span class="resource-type">Open Education Initiative</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        The Tiny Machine Learning Open Education Initiative democratizes access to embedded ML education through workshops and community collaboration.
+                    </p>
+                    <div class="resource-footer">
+                        <span class="resource-link">Learn More →</span>
+                        <span class="resource-status">🌍 Global Initiative</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/harvard-edge/cs249r_book/discussions" class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">💬</div>
+                        <div class="resource-meta">
+                            <h3 class="resource-title">Community Forum</h3>
+                            <span class="resource-type">Discussion Platform</span>
+                        </div>
+                    </div>
+                    <p class="resource-description">
+                        Connect with students, educators, and researchers. Ask questions, share insights, and collaborate on ML systems education.
+                    </p>
+                    <div class="resource-footer">
+                        <span class="resource-link">Join Discussion →</span>
+                        <span class="resource-status">🟢 Live</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="section" id="support">
+            <div class="support-section">
+                <div class="section-header">
+                    <h2 class="section-title">Support Our Mission</h2>
+                    <p class="section-subtitle">
+                        Help us train 1 million AI/ML engineers worldwide by 2030 through accessible, hands-on education
+                    </p>
+                </div>
+
+                <div class="support-stats">
+                    <div class="support-stat">
+                        <span class="support-stat-number">$3,200+</span>
+                        <span class="support-stat-label">Total Raised</span>
+                    </div>
+                    <div class="support-stat">
+                        <span class="support-stat-number">7</span>
+                        <span class="support-stat-label">Contributors</span>
+                    </div>
+                    <div class="support-stat">
+                        <span class="support-stat-number">$1,677</span>
+                        <span class="support-stat-label">Current Balance</span>
+                    </div>
+                </div>
+
+                <div class="contribution-tiers">
+                    <a href="https://opencollective.com/mlsysbook/contribute/backers-91078/checkout" class="tier-card">
+                        <div class="tier-icon">🧑‍🎓</div>
+                        <h3 class="tier-title">Support a Learner</h3>
+                        <div class="tier-amount">$15/month</div>
+                        <p class="tier-description">Help students access open-source ML education materials</p>
+                        <span class="tier-type">Recurring</span>
+                    </a>
+
+                    <a href="https://opencollective.com/mlsysbook/contribute/sponsors-91077/checkout" class="tier-card">
+                        <div class="tier-icon">📦</div>
+                        <h3 class="tier-title">Sponsor a TinyML Kit</h3>
+                        <div class="tier-amount">$45</div>
+                        <p class="tier-description">Provide hardware kits to under-resourced regions for hands-on learning</p>
+                        <span class="tier-type">One-time</span>
+                    </a>
+
+                    <a href="https://opencollective.com/mlsysbook/contribute/fund-a-learning-unit-91080/checkout" class="tier-card">
+                        <div class="tier-icon">📚</div>
+                        <h3 class="tier-title">Fund a Learning Unit</h3>
+                        <div class="tier-amount">$25/month</div>
+                        <p class="tier-description">Support creation of textbook chapters, notebooks, and labs</p>
+                        <span class="tier-type">Recurring</span>
+                    </a>
+
+                    <a href="https://opencollective.com/mlsysbook/contribute/sponsor-a-workshop-91079/checkout" class="tier-card">
+                        <div class="tier-icon">🧰</div>
+                        <h3 class="tier-title">Sponsor a Workshop</h3>
+                        <div class="tier-amount">$250</div>
+                        <p class="tier-description">Deliver hands-on workshops to under-resourced regions</p>
+                        <span class="tier-type">One-time</span>
+                    </a>
+
+                    <a href="https://opencollective.com/mlsysbook/contribute/sustain-the-mission-91081/checkout" class="tier-card tier-featured">
+                        <div class="tier-icon">🧠</div>
+                        <h3 class="tier-title">Sustain the Mission</h3>
+                        <div class="tier-amount">$10+</div>
+                        <p class="tier-description">Fund infrastructure and open-source maintenance to reach our $100K goal</p>
+                        <span class="tier-type">Flexible</span>
+                    </a>
+                </div>
+
+                <div class="support-impact">
+                    <h3>How Your Support Helps</h3>
+                    <div class="impact-grid">
+                        <div class="impact-item">
+                            <span class="impact-icon">📖</span>
+                            <p>Content development and platform maintenance</p>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🌍</span>
+                            <p>Global workshop and kit distribution programs</p>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">✈️</span>
+                            <p>Travel support for educators presenting at conferences</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="support-cta">
+                    <a href="https://opencollective.com/mlsysbook" class="btn btn-primary btn-large">
+                        💝 Contribute on Open Collective
+                    </a>
+                    <p class="support-note">All contributions are transparent and publicly tracked</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="section" id="community">
+            <div class="community">
+                <div class="section-header">
+                    <h2 class="section-title">Educational Community</h2>
+                    <p class="section-subtitle">
+                        Supporting learners and educators in the machine learning systems field
+                    </p>
+                </div>
+
+                <div class="community-grid">
+                    <div class="community-item">
+                        <div class="community-icon">🎓</div>
+                        <h3 class="community-title">Learners</h3>
+                        <p class="community-description">
+                            Students, self-taught practitioners, and professionals expanding their ML systems knowledge through structured coursework and hands-on practice
+                        </p>
+                    </div>
+
+                    <div class="community-item">
+                        <div class="community-icon">👨‍🏫</div>
+                        <h3 class="community-title">Educators</h3>
+                        <p class="community-description">
+                            University professors, corporate trainers, bootcamp instructors, and educational content creators teaching ML systems worldwide
+                        </p>
+                    </div>
+
+                    <div class="community-item">
+                        <div class="community-icon">🔬</div>
+                        <h3 class="community-title">Researchers</h3>
+                        <p class="community-description">
+                            Academic researchers, industry scientists, and open-source contributors advancing ML systems education and real-world applications
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://mlsysbook.ai" class="footer-link">📖 Textbook</a>
+                <a href="https://github.com/mlsysbook/labs" class="footer-link">🔬 Labs</a>
+                <a href="https://github.com/mlsysbook/kits" class="footer-link">🛠️ Kits</a>
+                <a href="https://tinytorch.ai" class="footer-link">🔥 TinyTorch</a>
+                <a href="https://github.com/tinyMLx/courseware/tree/master/edX" class="footer-link">🎓 Courseware</a>
+                <a href="https://github.com/harvard-edge/cs249r_book/discussions" class="footer-link">💬 Community</a>
+                <a href="https://opencollective.com/mlsysbook" class="footer-link">💝 Support</a>
+                <a href="mailto:contact@mlsysbook.ai" class="footer-link">📧 Contact</a>
+            </div>
+            
+            <div class="footer-note">
+                <p><strong>MLSysBook Educational Resources</strong> is an open-source initiative for machine learning systems education.</p>
+                <p>Created and maintained by educators, researchers, and the broader ML community. All materials are freely available under open-source licenses.</p>
+                <p>Principal maintainer: Vijay Janapa Reddi (Harvard University) • Community contributions welcome</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
