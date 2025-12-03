@@ -1199,7 +1199,7 @@
                 <a href="#support" class="nav-link">Support</a>
                 <a href="#community" class="nav-link">Community</a>
                 <a href="https://github.com/harvard-edge/cs249r_book/discussions" class="nav-link">Discussions</a>
-                <a href="#subscribe" class="nav-link nav-subscribe">Subscribe</a>
+                <a href="#subscribe" class="nav-link nav-subscribe" onclick="openModal(); return false;">Subscribe</a>
                 <a href="https://mlsysbook.ai" class="nav-cta">Access Book</a>
             </div>
         </nav>
@@ -1543,7 +1543,7 @@
                         </div>
                     </div>
                     <div class="subscribe-form-container">
-                        <form id="subscribe-form" class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME" method="post" target="_blank">
+                        <form id="subscribe-form" class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/mlsysbook" method="post" target="_blank">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="first-name">First name</label>
@@ -1615,7 +1615,7 @@
                     <h2 class="modal-title">Get MLSysBook Updates</h2>
                     <p class="modal-subtitle">Be the first to know about new chapters, labs, and resources.</p>
                 </div>
-                <form id="modal-subscribe-form" class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME" method="post" target="_blank">
+                <form id="modal-subscribe-form" class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/mlsysbook" method="post" target="_blank">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="modal-first-name">First name</label>
@@ -1675,7 +1675,7 @@
                 <a href="https://github.com/tinyMLx/courseware/tree/master/edX" class="footer-link">🎓 Courseware</a>
                 <a href="https://github.com/harvard-edge/cs249r_book/discussions" class="footer-link">💬 Community</a>
                 <a href="https://opencollective.com/mlsysbook" class="footer-link">💝 Support</a>
-                <a href="#subscribe" class="footer-link">✉️ Subscribe</a>
+                <a href="#subscribe" class="footer-link" onclick="openModal(); return false;">✉️ Subscribe</a>
                 <a href="mailto:contact@mlsysbook.ai" class="footer-link">📧 Contact</a>
             </div>
             
