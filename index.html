@@ -1696,6 +1696,17 @@
             document.body.style.overflow = '';
         }
         
+        // Check URL for /subscribe path or #subscribe hash and open modal
+        (function() {
+            const path = window.location.pathname;
+            const hash = window.location.hash;
+            if (path === '/subscribe' || path === '/subscribe/' || hash === '#subscribe') {
+                // Small delay to ensure DOM is ready
+                setTimeout(openModal, 100);
+                sessionStorage.setItem('modalShown', 'true');
+            }
+        })();
+        
         // Close modal on overlay click
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
